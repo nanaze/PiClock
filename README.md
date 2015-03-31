@@ -11,3 +11,7 @@ $ java Clock</code></pre>
 ## Looks like this
 
 ![screenshot](https://raw.githubusercontent.com/nanaze/PiClock/static/clock.png)
+
+## Pretty neat, huh?
+
+Yep.
