@@ -5,8 +5,6 @@ screen.
 
 ## How to build
 
-<code>
-$ javac *.java
-$ java Clock
-</code>
+<code><pre>$ javac *.java
+$ java Clock</pre></code>
 
