@@ -15,3 +15,7 @@ $ java Clock</code></pre>
 ## Pretty neat, huh?
 
 Yep.
+
+## Future work?
+
+Weather maybe? What do you think?
