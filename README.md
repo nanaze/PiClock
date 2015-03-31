@@ -17,4 +17,4 @@ Yep.
 
 ## Future work?
 
-Weather maybe? What do you think?
+Weather maybe? Make more pretty? What do you think?
