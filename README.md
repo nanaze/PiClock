@@ -1,7 +1,6 @@
 # PiClock
 
-A very simple clock in Java/AWT to display the time on a tiny Raspberry Pi 
-screen.
+A very simple clock in Java/AWT to display the time on a <a href="https://www.adafruit.com/products/1601">tiny Raspberry Pi screen</a> so you can have a simple, always-accurate, Internet connected clock.
 
 ## How to build
 
