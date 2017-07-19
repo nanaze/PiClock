@@ -37,18 +37,18 @@ class ClockKeyListener implements KeyListener {
   }
 }
 
-class Clock {
+public class PiClock {
 
   public static void main(String[] args) throws InterruptedException {
-    GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+    GraphicsDevice graphicsDevice = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
     Frame frame = new Frame();
     Canvas canvas = new ClockCanvas();
     frame.add(canvas);
 
-    KeyListener kl = new ClockKeyListener();
-    frame.addKeyListener(kl);
+    KeyListener keyListener = new ClockKeyListener();
+    frame.addKeyListener(keyListener);
 
-    gd.setFullScreenWindow(frame);
+    graphicsDevice.setFullScreenWindow(frame);
 
     TimerTask task = new TimerTask() {
       public void run() {
