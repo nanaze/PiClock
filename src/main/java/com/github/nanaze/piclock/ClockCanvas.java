@@ -2,9 +2,18 @@ package com.github.nanaze.piclock;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.text.DateFormat;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ClockCanvas extends Canvas {
+
+  private static final Pattern TIME_PATTERN =  Pattern.compile("[\\d:]+");
+
   public ClockCanvas() {
     setBackground(Color.BLACK);
   }
@@ -14,9 +23,18 @@ public class ClockCanvas extends Canvas {
     g.setColor(Color.WHITE);
 
     LocalTime time = LocalTime.now();
-    String timeString = String.format("%d:%02d:%02d", time.getHour(), time.getMinute(), time.getSecond());
 
-    drawString(timeString, g);
+    DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM);
+    String timeString = time.format(formatter);
+
+    drawString(extractTime(timeString), g);
+  }
+
+  private static String extractTime(String formattedTime) {
+    Matcher matcher = TIME_PATTERN.matcher(formattedTime);
+    boolean patternFound = matcher.find();
+    assert patternFound;
+    return matcher.group();
   }
 
   private void drawString(String timeString, Graphics g) {
