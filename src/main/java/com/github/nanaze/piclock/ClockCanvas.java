@@ -33,8 +33,13 @@ public class ClockCanvas extends Canvas {
   private static String extractTime(String formattedTime) {
     Matcher matcher = TIME_PATTERN.matcher(formattedTime);
     boolean patternFound = matcher.find();
-    assert patternFound;
-    return matcher.group();
+
+    if (patternFound) {
+      return matcher.group();
+    }
+
+    // If pattern was not found, just fall back.
+    return formattedTime;
   }
 
   private void drawString(String timeString, Graphics g) {
