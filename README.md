@@ -4,8 +4,15 @@ A very simple clock in Java/AWT to display the time on a <a href="https://www.ad
 
 ## How to build
 
-<pre><code>$ javac *.java
-$ java Clock</code></pre>
+```
+$ mvn package
+```
+
+## How to run
+
+```
+$ java -jar target/piclock-1.0-SNAPSHOT.jar
+```
 
 ## Looks like this
 
